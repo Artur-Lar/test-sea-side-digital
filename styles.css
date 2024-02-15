@@ -25,6 +25,21 @@ input[type="text"]:focus {
   border: solid 2px;
   outline: none;
 }
+textarea {
+  font-family: Arial, sans-serif;
+  width: calc(100% - 80px);
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid rgb(86, 86, 212);
+  border-radius: 5px;
+  resize: vertical;
+}
+
+textarea:focus {
+  border-color: rgb(0, 0, 255) !important;
+  border: solid 2px;
+  outline: none;
+}
 button {
   padding: 10px 15px;
   cursor: pointer;
@@ -46,11 +61,17 @@ button {
   border: solid 1px rgb(86, 86, 212);
   border-radius: 5px;
 }
+.task-title {
+  margin: 0;
+}
 .task-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5px;
+  padding: 10px 15px;
+}
+.title-and-description {
+  display: block;
 }
 @media (max-width: 768px) {
   .task-container {

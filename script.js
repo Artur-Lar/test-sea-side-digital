@@ -12,7 +12,10 @@ function renderTasks(filteredTasks) {
     }
     taskItem.innerHTML = `
       <div class="task-container">
-      <span class="task-title">${task.title}</span>
+      <div class="title-and-description">
+      <h3 class="task-title">${task.title}</h3>
+      <p>${task.description}</p>
+      </div>
       <div class="btn-group">
       <button class="toggle-btn" onclick="toggleTask(${index})">Сделано</button>
       <button class="delete-btn" onclick="deleteTask(${index})">Удалить</button>
@@ -25,11 +28,14 @@ function renderTasks(filteredTasks) {
 
 function addTask() {
   const taskInput = document.getElementById("taskInput");
+  const taskDescriptionInput = document.getElementById("taskDescription");
   const title = taskInput.value.trim();
+  const description = taskDescriptionInput.value.trim();
   if (title) {
-    tasks.push({ title, completed: false });
+    tasks.push({ title, description, completed: false });
     renderTasks(tasks);
     taskInput.value = "";
+    taskDescriptionInput.value = "";
   }
 }
 
