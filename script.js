@@ -14,7 +14,7 @@ function renderTasks(filteredTasks) {
       <div class="task-container">
       <div class="title-and-description">
       <h3 class="task-title">${task.title}</h3>
-      <p>${task.description}</p>
+      <p class="task-description">${task.description}</p>
       </div>
       <div class="btn-group">
       <button class="toggle-btn" onclick="toggleTask(${index})">Сделано</button>
@@ -25,7 +25,7 @@ function renderTasks(filteredTasks) {
     taskList.appendChild(taskItem);
   });
 }
-
+//добавление задания
 function addTask() {
   const taskInput = document.getElementById("taskInput");
   const taskDescriptionInput = document.getElementById("taskDescription");
@@ -38,12 +38,12 @@ function addTask() {
     taskDescriptionInput.value = "";
   }
 }
-
+//удаление задания
 function deleteTask(index) {
   tasks.splice(index, 1);
   renderTasks(tasks);
 }
-
+//пометить задание как Сделано
 function toggleTask(index) {
   tasks[index].completed = !tasks[index].completed;
   renderTasks(tasks);

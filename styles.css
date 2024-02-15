@@ -61,7 +61,8 @@ button {
   border: solid 1px rgb(86, 86, 212);
   border-radius: 5px;
 }
-.task-title {
+.task-title,
+.task-description {
   margin: 0;
 }
 .task-container {
@@ -71,7 +72,8 @@ button {
   padding: 10px 15px;
 }
 .title-and-description {
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 @media (max-width: 768px) {
   .task-container {
